@@ -9,8 +9,7 @@ pipeline {
         }
         stage('build images') {
             steps {
-                sh "docker build -t detibaholli/elefantivideofrontend:latest -t detibaholli/elefantivideofrontend:1.${env['ELEFANTI-VIDEO-FRONTEND-BUILD-NUMBER']} -f elefanti.video.frontend/Dockerfile ."
-                sh "docker build -t detibaholli/elefantivideobackend:latest -t detibaholli/elefantivideobackend:1.${env['ELEFANTI-VIDEO-BACKEND-BUILD-NUMBER']} -f elefanti.video.backend/Dockerfile ."
+                sh "docker build -t detibaholli/elefantivideofrontend:latest -t detibaholli/elefantivideofrontend:1.${env['ELEFANTI-VIDEO-FRONTEND-BUILD-NUMBER']} ."
                 
                 // script {
                 //     elefantifrontendimage = docker.build("detibaholli/elefantivideofrontend")
