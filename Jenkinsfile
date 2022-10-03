@@ -21,7 +21,7 @@ pipeline {
         stage('deploy images') {
             steps {
                 script {
-                    docker.withRegistry('https://hub.docker.com/', 'docker-hub-credentials') {
+                    docker.withRegistry('https://hub.docker.com/', 'docker-hub') {
                         elefantifrontendimage.push("${env['ELEFANTI-VIDEO-FRONTEND-BUILD-NUMBER']}")
                         elefantifrontendimage.push('latest')
                     }
