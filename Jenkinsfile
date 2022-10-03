@@ -8,11 +8,11 @@ pipeline {
             }
         }
         stage('build images') {
-            GIT_COMMIT_NUMBER = sh (
-                script: 'git rev-list HEAD --count --first-parent',
-                returnStdout: true
-            ).trim()
             steps {
+                GIT_COMMIT_NUMBER = sh (
+                    script: 'git rev-list HEAD --count --first-parent',
+                    returnStdout: true
+                ).trim()
                 sh "docker build -t detibaholli/elefantivideofrontend:latest -t detibaholli/elefantivideofrontend:1.${GIT_COMMIT_NUMBER} ."
             }
         }
