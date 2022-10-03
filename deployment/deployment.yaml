@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: video-frontend-deployment
+  labels:
+    app: elefanti-video-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: elefanti-video-frontend
+  template:
+    metadata:
+      labels:
+        app: elefanti-video-frontend
+    spec:
+      containers:
+      - name: elefanti-video-frontend
+        image: detibaholli/elefantivideofrontend:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: REACT_APP_API
+          value: http://20.76.156.142
+      #   volumeMounts:
+      #   - name: video-frontend
+      #     mountPath: /var/video-frontend_home
+      # volumes:
+      # - name: video-frontend
+      #   persistentVolumeClaim:
+      #     claimName: video-frontend-pvc
