@@ -30,8 +30,7 @@ pipeline {
         stage('deploy to kubernetes') {
             steps {
                 withKubeConfig(caCertificate: '', clusterName: 'elefanti-video', contextName: 'elefanti-video', credentialsId: 'kube-config-file', namespace: 'default', serverUrl: 'https://elefanti-video-dns-af669090.hcp.westeurope.azmk8s.io:443') {
-                    sh "kubectl apply -f deployment/deployment.yaml"
-                    sh "kubectl get deployments"
+                    sh "kubectl set image deployment/video-frontend-deployment elefanti-video-frontend=detibaholli/elefantivideofrontend:1.${GIT_COMMIT_NUMBER}"
                 }
             }
         }
