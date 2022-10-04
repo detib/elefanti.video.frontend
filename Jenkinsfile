@@ -15,7 +15,7 @@ pipeline {
                         returnStdout: true
                     ).trim()
                 }
-                sh "docker build -t detibaholli/elefantivideofrontend:latest -t detibaholli/elefantivideofrontend:1.${GIT_COMMIT_NUMBER} ."
+                sh "docker build --build-arg REACT_APP_API_URL='${env['REACT_APP_API_URL']}' -t detibaholli/elefantivideofrontend:latest -t detibaholli/elefantivideofrontend:1.${GIT_COMMIT_NUMBER} ."
             }
         }
 

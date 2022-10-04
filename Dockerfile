@@ -10,6 +10,9 @@ RUN npm install
 
 COPY . .
 
+ARG REACT_APP_API_URL 
+ENV REACT_APP_API=${REACT_APP_API_URL}
+
 RUN npm run build
 
 FROM nginx:1.21.3-alpine
