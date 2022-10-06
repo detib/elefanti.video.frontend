@@ -12,7 +12,6 @@ const App = () => {
     <Router>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/' element={<VideoPlayer />} />
         <Route path='/about' element={<About />} />
         <Route path='*' element={<div>404</div>} />
         
