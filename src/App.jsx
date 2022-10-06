@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.scss';
 import About from './Pages/About/About';
 import Home from './Pages/Home/Home';
-import SignIn from './Pages/SignIn/SignIn.js';
+import SignIn from './components/SignIn/SignIn';
 
 
 const App = () => {
