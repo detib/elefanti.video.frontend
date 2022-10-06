@@ -1,0 +1,27 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 1rem;
+    grid-auto-flow: column;
+  }
+  
+  .video-container {
+    border: solid #282c34;
+    border-radius: 20%;
+    max-width: fit-content;
+    float: left;
+    justify-content: space-between;
+    margin-left: 4rem;
+    margin-top: 2rem;
+    overflow: hidden;
+    box-shadow: 5rem #000000;
+    align-items: center;
+  }
+  .video-title {
+    justify-content: center;
+    margin-left: auto;
+  }
+  
+  .video-thumbnail {
+    max-width: 12rem;
+  }
