@@ -1,32 +1,27 @@
+import "./VideoCard.scss";
+import { Link } from 'react-router-dom'
 
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
-
-
-export default function ActionAreaCard() {
+export const VideoCard = (props) => {
   return (
-    <div className='wrapper'>
-    <Card sx={{ maxWidth: 345, marginLeft:10, marginTop:10}}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="fit-content"
-          image="https://i.ytimg.com/vi/hQAHSlTtcmY/maxresdefault.jpg"
-          alt="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Title:
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Description:
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
-</div>
+    <Link>
+      <div className="card">
+        <div className="card__actionArea">
+          <div className="card__media">
+            <img
+              className="card__image"
+              src={`https://img.youtube.com/vi/${props.id}/maxresdefault.jpg`}
+              alt=""
+            />
+          </div>
+          <div className="card__content">
+            <h2 className="card__title">Title: {props.title}</h2>
+            <h3 className="card__author">Author: {props.author}</h3>
+            <p className="card__description">Description: {props.description}</p>
+            <p className="card__timestamp">{props.timestamp}</p>
+            <p className="card__createdOn">Published: {props.createdOn}</p>
+          </div>
+        </div>
+      </div>
+    </Link>
   );
-  }
+};

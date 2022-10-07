@@ -1,27 +1,53 @@
-.wrapper {
-    display: grid;
-    grid-template-columns: auto;
-    grid-gap: 1rem;
-    grid-auto-flow: column;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+$primaryClr: #06283D;
+$secondaryClr: #256D85;
+$lightBlue: #47B5FF;
+$baseClr: #DFF6FF;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 20rem;
+  max-height: 17rem;
+  margin: 2rem;
+  gap: 2rem;
+  justify-content: center;
+  box-shadow: 0 2px 8px $secondaryClr;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  &__actionArea{
+    background-color:#DFF6FF;
   }
-  
-  .video-container {
-    border: solid #282c34;
-    border-radius: 20%;
-    max-width: fit-content;
-    float: left;
-    justify-content: space-between;
-    margin-left: 4rem;
-    margin-top: 2rem;
-    overflow: hidden;
-    box-shadow: 5rem #000000;
-    align-items: center;
-  }
-  .video-title {
+
+  &__content {
+    padding: .4rem;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
     justify-content: center;
-    margin-left: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
   }
-  
-  .video-thumbnail {
-    max-width: 12rem;
+
+  &__content h2 h3 p {
+    padding: 1rem;
   }
+
+  &__media {
+    max-width: 20rem;
+    max-height: 16rem;
+  }
+
+  &__image {
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+  }
+  &:hover {
+    transform: scale(1.04);
+  }
+}
