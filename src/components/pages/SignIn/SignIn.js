@@ -1,6 +1,6 @@
 import React from 'react';
 import './SignInStyle.css';
-import logo from '../../img/assets/shared/logo.png';
+import logo from '../../../assets/shared/logo.png';
 
 
 const SignIn =()=>{
