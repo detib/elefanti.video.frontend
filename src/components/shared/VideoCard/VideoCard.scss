@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 $primaryClr: #06283D;
 $secondaryClr: #256D85;
 $lightBlue: #47B5FF;
@@ -8,8 +8,9 @@ $baseClr: #DFF6FF;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 20rem;
-  max-height: 17rem;
+  width: 20rem;
+  height: 18rem;
+  max-width: 80%;
   margin: 2rem;
   gap: 2rem;
   justify-content: center;
@@ -19,12 +20,12 @@ $baseClr: #DFF6FF;
   overflow: hidden;
 
   &__actionArea{
-    background-color:#DFF6FF;
+    background-color:#06283D;
   }
 
   &__content {
     padding: .4rem;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -32,8 +33,28 @@ $baseClr: #DFF6FF;
     text-decoration: none;
   }
 
-  &__content h2 h3 p {
+  &__content {
     padding: 1rem;
+  }
+
+  &__title {
+    color: none;
+    color: #DFF6FF;
+  }
+
+  &__description {
+    color: none;
+    color: #DFF6FF;
+  }
+
+  &__timestamp {
+    color: none;
+    color: #DFF6FF;
+  }
+
+  &__createdOn {
+    color: none !important;
+    color: #DFF6FF;
   }
 
   &__media {
@@ -48,6 +69,6 @@ $baseClr: #DFF6FF;
     display: block;
   }
   &:hover {
-    transform: scale(1.04);
+    transform: scale(1.01);
   }
 }
