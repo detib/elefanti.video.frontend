@@ -16,12 +16,15 @@ const YoutubeEmbed = ({ embedId }) => (
       />
       <h2>This is Title</h2>
       <h3>This part is going to include description</h3>
-  </div>
-  <div className="similar-list">
-    <div>
+      </div>
+
+      <div className="similar-list">
+  
       <h3>This is for similar posts</h3>
-    </div>
-  </div>
+      
+      </div>
+  
+ 
   </div>
     
   

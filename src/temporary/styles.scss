@@ -3,6 +3,8 @@
   padding-bottom: 56.25%;
   position: relative;
   height: 0;
+  width: 70%;
+  display: inline-block;
 }
 
 .video-responsive {
@@ -11,7 +13,7 @@
   left: 0;
   top: 0;
   height: 70%;
-  width: 70%;
+  width: 100%;
   position: absolute;
 }
 }
@@ -38,7 +40,7 @@ h3 {
 }
 }
 .content{
-  display:block;
+  display: block;
 }
 
 .similar-list {
@@ -46,16 +48,19 @@ h3 {
   padding-bottom: 56.25%;
   position: relative;
   height: 0;
-  top: 0;
+  right: 0;
+  width: 30%;
+  display: inline-block;
 }
 .similar-list {
   div{
-  align-items: right;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 25%;
-  position: absolute;
+
+    right: 0;
+    top: 0;
+    height: 70%;
+    width: 100%;
+    position: absolute;
 }
 }
+
 
