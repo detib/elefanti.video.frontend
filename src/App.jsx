@@ -7,6 +7,7 @@ import Home from './Pages/Home/Home';
 import SignUp from './components/pages/SignUp';
 import SignIn from './components/pages/SignIn/SignIn';
 
+
 const App = () => {
   return (
     <Router>
@@ -16,6 +17,7 @@ const App = () => {
         <Route path='/signup' element={<SignUp />} />
         <Route path='/signin' element={<SignIn />} />
         <Route path='*' element={<div>404</div>} />
+        
       </Routes>
     </Router>
   );
