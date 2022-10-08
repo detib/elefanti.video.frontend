@@ -74,14 +74,3 @@ button
   background-color: #5784ff;
   color: beige;
 }
-*, *::after, *::before 
-{
-  box-sizing: border-box;
-  padding: 0;
-  margin-left: 3px;
-  margin-right: 3px;
-  list-style-type: none;
-  text-decoration: none;
-}
-  
-   
