@@ -1,3 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+html,
+body {
+  font-family: 'Poppins', 'sans-serif', 'Times New Roman';
+  width: 100%;
+  height: 100%;
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-track,
+  .side-bar::-webkit-scrollbar-track {
+    background: var(--scroll-bar-bg);
+  }
+  &::-webkit-scrollbar-thumb,
+  .side-bar::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      to bottom,
+      var(--70-main-color),
+      var(--main-color),
+      var(--70-main-color)
+    );
+    border-radius: 2px;
+  }
+}
+
 *,
 *::after,
 *::before {
@@ -6,4 +32,29 @@
   margin: 0;
   list-style-type: none;
   text-decoration: none;
+}
+
+body {
+  // background-color: black;
+  --main-color: #5784ff;
+  --link-color: #4b7bff;
+  --icon-color: #c5d5ff;
+  --faded-main-color: #bac8ee;
+  --70-main-color: #5784ffb3;
+  --50-main-color: #5784ff80;
+  --30-main-color: #5784ff4d;
+  --25-main-color: #5784ff40;
+  --10-main-color: #5784ff1a;
+  --scroll-bar-bg: #e3eaff;
+  --toggle-box: #fff;
+  --toggle-box-circle: var(--main-color);
+  --body-bg: #fff;
+  --darker-bg: #fff;
+  --black-text: #000;
+  --dark-text: #00081e;
+  --dark-input-text: #00081e;
+}
+
+.Toastify__progress-bar--animated {
+  animation-play-state: running !important;
 }

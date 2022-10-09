@@ -1,8 +1,12 @@
 import React from 'react'
+import UserLayout from '../../components/shared/layouts/UserLayout'
+
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <UserLayout>
+      <div>Home</div>
+    </UserLayout>
   )
 }
 

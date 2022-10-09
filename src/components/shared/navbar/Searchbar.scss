@@ -1,0 +1,58 @@
+.search-input-container {
+  border: 1px solid var(--main-color);
+  background: #fff;
+  padding: 0 1em;
+  width: 300px;
+  max-width: 100%;
+  gap: unset;
+  .search-icon-container {
+    cursor: pointer;
+    svg {
+      color: var(--main-color);
+      font-size: 20px;
+    }
+  }
+  .search-input {
+    padding: 0.75em 0;
+    color: #00081e;
+    font-size: 16px;
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-decoration {
+      appearance: none;
+    }
+    &::placeholder {
+      color: #00081ecc;
+    }
+  }
+  .search-select-field {
+    select {
+      color: #00081e;
+    }
+    svg {
+      width: 25px;
+      height: 25px;
+      path {
+        fill: var(--main-color);
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .nav-searchbar {
+    display: none !important;
+  }
+}
+
+.showSearchBar {
+  animation: showSearch 0.5s ease-in forwards;
+}
+
+@keyframes showSearch {
+  0% {
+    transform: translateY(-200%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
