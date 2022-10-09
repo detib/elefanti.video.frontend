@@ -6,11 +6,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 
 
-import VideoView from './pages/Videoview/VideoView';
-import Home from './pages/Home/Home';
-import About from './pages/About/About';
-import Login from './pages/auth/login/Login';
-import Register from './pages/auth/register/Register';
+import VideoView from './Pages/Videoview/VideoView';
+import Home from './Pages/Home/Home';
+import About from './Pages/About/About';
+import Login from './Pages/auth/login/Login';
+import Register from './Pages/auth/register/Register';
 
 import { AuthContext } from './context/AuthContext';
 import jwtDecode from 'jwt-decode';
