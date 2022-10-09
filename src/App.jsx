@@ -1,17 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import './App.scss';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 
-import SignUp from './components/pages/signup/SignUp';
+
 import VideoView from './pages/Videoview/VideoView';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Login from './pages/auth/login/Login';
+import Register from './pages/auth/register/Register';
+
 import { AuthContext } from './context/AuthContext';
-import { useContext } from 'react';
 import jwtDecode from 'jwt-decode';
 
 const App = () => {
@@ -52,7 +53,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/signup' element={<SignUp />} />
+        <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/about' element={<About />} />
         <Route path='/watch' element={<VideoView />} />
