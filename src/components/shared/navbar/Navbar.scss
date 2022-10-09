@@ -1,0 +1,233 @@
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  transition: 0.1s;
+  .navbar-content {
+    padding: 0.75em 2.75em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(#000, 0);
+    position: relative;
+    transition: 0.3s;
+    .title-icon {
+      .nav-icon {
+        svg {
+          path {
+            fill: var(--main-color);
+          }
+        }
+      }
+      .nav-title {
+        h1 {
+          font-size: 21px;
+          color: var(--dark-text);
+        }
+      }
+    }
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      .nav-link-container {
+        cursor: pointer;
+        padding: 20px 30px;
+        margin: auto 0;
+        align-self: stretch;
+        .nav-link {
+          font-size: 16px;
+          color: var(--dark-text);
+          transition: 0.2s;
+          svg {
+            transition: 0.2s;
+            font-size: 20px;
+          }
+        }
+        &:hover {
+          .nav-link {
+            color: var(--main-color) !important;
+            svg {
+              transform: rotate(-180deg);
+            }
+          }
+        }
+      }
+    }
+    .nav-login-signup {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 15px;
+      .login-link-container {
+        .login-link {
+          padding: 0.5em 1.5em;
+          border-radius: 100vh;
+          font-size: 16px;
+          color: var(--dark-text);
+        }
+        .signup {
+          color: #fff;
+          background-color: var(--main-color);
+        }
+      }
+    }
+    .hamburger-menu {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      width: 50px;
+      cursor: pointer;
+      .hamburger-line {
+        align-self: flex-end;
+        width: 70%;
+        height: 5px;
+        background-color: var(--main-color);
+      }
+      &:hover {
+        .hamburger-line {
+          animation: grow 1s infinite alternate;
+          &:nth-child(1) {
+            animation-delay: 0.1s;
+          }
+          &:nth-child(2) {
+            animation-delay: 0.2s;
+          }
+          &:nth-child(3) {
+            animation-delay: 0.3s;
+          }
+        }
+      }
+    }
+  }
+  .side-bar {
+    display: none;
+  }
+  .backdrop {
+    display: none;
+  }
+}
+
+.home-page {
+  .navbar {
+    .navbar-content {
+      .title-icon {
+        .nav-icon {
+          svg path {
+            fill: #fff;
+          }
+        }
+        .nav-title {
+          h1 {
+            color: #fff;
+          }
+        }
+      }
+      .navigation {
+        .nav-link-container {
+          .nav-link {
+            color: #fff;
+          }
+        }
+      }
+      .nav-login-signup {
+        .search-box {
+          label {
+            svg {
+              color: #fff;
+            }
+          }
+        }
+        .login-link-container {
+          .login-link {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sticky {
+  background-color: var(--darker-bg) !important;
+  box-shadow: 0 0 3px 1px var(--50-main-color);
+}
+
+.sticky-nav-colors {
+  color: var(--dark-text) !important;
+  .page-logo-path {
+    fill: var(--main-color) !important;
+  }
+}
+
+@media (max-width: 1300px) {
+  .nav-link-container {
+    padding: 20px !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  .navbar {
+    .navbar-content {
+      padding: 0.75em 1.5em;
+      .title-icon {
+        .nav-icon {
+          width: 30px;
+          svg {
+            width: 100%;
+          }
+        }
+        .nav-title {
+          h1 {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .navbar {
+    .navbar-content {
+      .title-icon {
+        .nav-title {
+          h1 {
+            font-size: 21px;
+          }
+        }
+      }
+      .navigation,
+      .nav-login-signup {
+        display: none;
+      }
+      .hamburger-menu {
+        display: flex;
+      }
+    }
+    .side-bar {
+      display: flex;
+    }
+    .backdrop {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar {
+    .navbar-content {
+      padding: 1.5em;
+    }
+  }
+}
+
+@keyframes grow {
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+  }
+}
