@@ -13,9 +13,13 @@
     }
   }
   .search-input {
-    padding: .75em 0;
+    padding: 0.75em 0;
     color: #00081e;
     font-size: 16px;
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-decoration {
+      appearance: none;
+    }
     &::placeholder {
       color: #00081ecc;
     }
