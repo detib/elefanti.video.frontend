@@ -5,7 +5,7 @@ const UserLayout = ({ children }) => {
   return (
     <>
       <Navbar />
-      <div style={{ marginTop: '100px'}}/>
+      <div style={{ paddingTop: '100px'}}/>
       {children}
     </>
   );

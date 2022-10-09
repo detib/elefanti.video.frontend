@@ -13,6 +13,11 @@
   place-items: center;
 }
 
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
 .shared-paragraph {
   color: var(--dark-text);
   font-size: 16px;
