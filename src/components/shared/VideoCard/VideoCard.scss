@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap%27');
 $primaryClr: #06283D;
 $secondaryClr: #256D85;
 $lightBlue: #47B5FF;
@@ -8,10 +8,6 @@ $baseClr: #DFF6FF;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 20rem;
-  height: 18rem;
-  max-width: 80%;
-  margin: 2rem;
   gap: 2rem;
   justify-content: center;
   box-shadow: 0 2px 8px $secondaryClr;
@@ -19,11 +15,11 @@ $baseClr: #DFF6FF;
   border-radius: 0.5rem;
   overflow: hidden;
 
-  &__actionArea{
-    background-color:#06283D;
+  &actionArea{
+    background-color: #200f4f;
   }
 
-  &__content {
+  &content {
     padding: .4rem;
     font-family: 'Poppins', sans-serif;
     display: flex;
@@ -33,38 +29,34 @@ $baseClr: #DFF6FF;
     text-decoration: none;
   }
 
-  &__content {
+  &content {
     padding: 1rem;
   }
 
-  &__title {
+  &title {
     color: none;
     color: #DFF6FF;
   }
 
-  &__description {
+  &description {
     color: none;
     color: #DFF6FF;
   }
 
-  &__timestamp {
+  &timestamp {
     color: none;
     color: #DFF6FF;
   }
 
-  &__createdOn {
+  &createdOn {
     color: none !important;
     color: #DFF6FF;
   }
 
-  &__media {
-    max-width: 20rem;
-    max-height: 16rem;
-  }
-
-  &__image {
+  &image {
     object-fit: cover;
     max-width: 100%;
+    width: 100%;
     max-height: 100%;
     display: block;
   }

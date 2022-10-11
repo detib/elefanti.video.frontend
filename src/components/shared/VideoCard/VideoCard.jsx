@@ -1,9 +1,10 @@
 import './VideoCard.scss';
+import '../styles/shared.scss';
 import { Link } from 'react-router-dom';
 
 const VideoCard = (props) => {
   return (
-    <Link>
+    <Link to={props.to}>
       <div className='card'>
         <div className='card__actionArea'>
           <div className='card__media'>
