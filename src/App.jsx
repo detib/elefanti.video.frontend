@@ -15,6 +15,7 @@ import Register from './Pages/auth/register/Register';
 import { AuthContext } from './context/AuthContext';
 import jwtDecode from 'jwt-decode';
 import Categories from './Pages/Categories/Categories';
+import SingleCategory from './Pages/SingleCategory/SingleCategory';
 
 const App = () => {
   const context = useContext(AuthContext);
@@ -58,6 +59,7 @@ const App = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/about' element={<About />} />
         <Route path='/categories' element={<Categories />} />
+        <Route path='/categories/:categoryId' element={<SingleCategory />} />
         <Route path='/watch' element={<VideoView />} />
         <Route path='*' element={<div>404</div>} />
         {context.data.isLoggedIn ? (

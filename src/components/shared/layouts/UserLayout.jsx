@@ -4,11 +4,11 @@ import Navbar from '../navbar/Navbar';
 
 const UserLayout = ({ children }) => {
   return (
-    <>
+    <div className='main'>
       <Navbar />
-      {children}
+      <main>{children}</main>
       <Footer />
-    </>
+    </div>
   );
 };
 
