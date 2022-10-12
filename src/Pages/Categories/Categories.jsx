@@ -4,7 +4,7 @@ import UserLayout from '../../components/shared/layouts/UserLayout';
 
 const Categories = () => {
   return (
-    <UserLayout>
+    <UserLayout className='categories'>
         <MainCategories />
     </UserLayout>
   );

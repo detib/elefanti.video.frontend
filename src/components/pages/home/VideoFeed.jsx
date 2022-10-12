@@ -34,7 +34,7 @@ const VideoFeed = () => {
           const videoProps = {
             key: video.id,
             id: video.id,
-            to: `watch/${video.id}`,
+            to: `/watch/${video.id}`,
             title: video.title,
             createdOn: video.createdOn,
             description: video.description,

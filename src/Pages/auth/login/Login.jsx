@@ -4,7 +4,7 @@ import UserLayout from '../../../components/shared/layouts/UserLayout';
 
 const Login = () => {
   return (
-    <UserLayout>
+    <UserLayout className='login'>
       <LoginForm />
     </UserLayout>
   );

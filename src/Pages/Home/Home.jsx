@@ -5,7 +5,7 @@ import UserLayout from '../../components/shared/layouts/UserLayout';
 
 const Home = () => {
   return (
-    <UserLayout>
+    <UserLayout className='home'>
       <HomeBanner />
       <VideoFeed />
     </UserLayout>

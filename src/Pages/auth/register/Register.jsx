@@ -5,7 +5,7 @@ import UserLayout from '../../../components/shared/layouts/UserLayout'
 
 const Register = () => {
   return (
-    <UserLayout>
+    <UserLayout className='register'>
         <SignUpForm />
     </UserLayout>
   )
