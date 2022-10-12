@@ -15,11 +15,11 @@ $baseClr: #DFF6FF;
   border-radius: 0.5rem;
   overflow: hidden;
 
-  &actionArea{
+  &__actionArea{
     background-color: #200f4f;
   }
 
-  &content {
+  &__content {
     padding: .4rem;
     font-family: 'Poppins', sans-serif;
     display: flex;
@@ -29,31 +29,31 @@ $baseClr: #DFF6FF;
     text-decoration: none;
   }
 
-  &content {
+  &__content {
     padding: 1rem;
   }
 
-  &title {
+  &__title {
     color: none;
     color: #DFF6FF;
   }
 
-  &description {
+  &__description {
     color: none;
     color: #DFF6FF;
   }
 
-  &timestamp {
+  &__timestamp {
     color: none;
     color: #DFF6FF;
   }
 
-  &createdOn {
+  &__createdOn {
     color: none !important;
     color: #DFF6FF;
   }
 
-  &image {
+  &__image {
     object-fit: cover;
     max-width: 100%;
     width: 100%;
