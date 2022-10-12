@@ -2,7 +2,7 @@ import React from 'react';
 import './Sidebar.scss';
 import '../../styles/shared.scss';
 
-import { BiSearch } from 'react-icons/bi';
+import { ReactComponent as Logo } from '../../../../assets/shared/logo-no-text.svg'
 import { CgClose } from 'react-icons/cg';
 import { Link } from 'react-router-dom';
 import Searchbar from '../Searchbar';
@@ -12,7 +12,7 @@ const Sidebar = (props) => {
     <div style={{ zIndex: props.zIndex }} className='side-bar'>
       <div className='sidebar-logo inline spread'>
         <div className='sidebar-icon-title inline spread'>
-          <div className='sidebar-icon'>{/* <Logo /> */}</div>
+          <div className='sidebar-icon'><Logo /></div>
           <div>
             <Link className='sidebar-title' to='/'>
               Elefanti Video
