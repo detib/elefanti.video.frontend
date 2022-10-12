@@ -6,6 +6,9 @@
   max-width: 100%;
   gap: unset;
   .search-icon-container {
+    background: none;
+    border: none;
+    outline: none;
     cursor: pointer;
     svg {
       color: var(--main-color);

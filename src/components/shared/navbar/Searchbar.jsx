@@ -10,14 +10,16 @@ const Searchbar = () => {
   const queryInputRef = useRef();
   const navigate = useNavigate();
 
-  const searchByQuery = () => {
+  const searchByQuery = (e) => {
+    e.preventDefault();
     const queryValue = queryInputRef.current.value.trim();
     if (queryValue == null || queryValue == '') return;
-    navigate(`searchResult/${queryValue}`);
+    queryInputRef.current.value = '';
+    navigate(`/search/${queryValue}`);
   };
 
   return (
-    <div className='search-input-container shared-input-container inline'>
+    <form className='search-input-container shared-input-container inline'>
       <input
         ref={queryInputRef}
         type='search'
@@ -25,13 +27,13 @@ const Searchbar = () => {
         className='search-input shared-input'
         placeholder='Search videos'
       />
-      <div
-        onClick={() => searchByQuery()}
+      <button type='submit'
+        onClick={(e) => searchByQuery(e)}
         className='search-icon-container shared-icon-container center-item'
       >
         <BsSearch />
-      </div>
-    </div>
+      </button>
+    </form>
   );
 };
 
