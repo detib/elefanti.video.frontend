@@ -5,7 +5,7 @@ import UserLayout from '../../components/shared/layouts/UserLayout';
 const SingleCategory = () => {
 
   return (
-    <UserLayout>
+    <UserLayout className='single-category'>
       <SingleCategoryVideos />
     </UserLayout>
   );

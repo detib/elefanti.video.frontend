@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import './Navbar.scss';
 
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../../assets/shared/logo-no-text.svg';
 import Sidebar from './Sidebar/Sidebar';
 import Backdrop from '../Backdrop/Backdrop';
@@ -13,7 +13,6 @@ const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const context = useContext(AuthContext);
-  const location = useLocation();
   const navigate = useNavigate()
 
   const showSidebar = () => {
@@ -43,7 +42,7 @@ const Navbar = () => {
   const zIndex = 100;
 
   return (
-    <div className={`navbar ${isSticky ? 'sticky' : ''} ${location.pathname.split('/')[1]}`}>
+    <div className={`navbar ${isSticky ? 'sticky' : ''} `}>
       <div className={`navbar-content `}>
         <Link to='/' className='title-icon inline'>
           <div className='nav-icon'>
