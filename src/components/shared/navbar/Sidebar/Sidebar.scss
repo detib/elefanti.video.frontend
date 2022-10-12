@@ -68,21 +68,6 @@
           }
         }
       }
-      .drop-down-links {
-        .dropdown-link {
-          padding: 0.5em 0 0.5em 3.75em;
-          border-top: 1px solid var(--main-color);
-          font-size: 15px;
-          a {
-            color: var(--dark-text);
-          }
-          &:hover {
-            a {
-              color: var(--main-color);
-            }
-          }
-        }
-      }
     }
   }
   .sidebar-auth {
@@ -100,29 +85,6 @@
           padding: 0.75em 1.5em;
           color: #fff;
         }
-      }
-    }
-    .mobile-searchbox {
-      gap: 0;
-      border: 1px solid var(--main-color);
-      border-radius: 10px;
-      overflow: hidden;
-      input[type='search'] {
-        background: rgba(0, 0, 0, 0);
-        padding: 7.5px 10px;
-        flex: 1 2;
-        border: none;
-        outline: none;
-        color: var(--dark-text);
-      }
-      svg {
-        height: 100%;
-        width: 15%;
-        padding: 7px;
-        background-color: var(--main-color);
-        color: #fff;
-        flex-shrink: 0;
-        cursor: pointer;
       }
     }
   }

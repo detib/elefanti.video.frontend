@@ -57,8 +57,8 @@ const Navbar = () => {
         </Link>
         <div className='navigation'>
           <div className='nav-link-container'>
-            <Link to='/' className={`nav-link ${isSticky ? 'sticky-nav-colors' : ''} `}>
-              Link
+            <Link to='/categories' className={`nav-link ${isSticky ? 'sticky-nav-colors' : ''} `}>
+              Categories
             </Link>
           </div>
         </div>

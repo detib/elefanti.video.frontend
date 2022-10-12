@@ -25,7 +25,14 @@ const Sidebar = (props) => {
         <div className='navigation-link '>
           <div className='main-link inline spread'>
             <p className='mobile-nav-link'>
-              <Link to={'/'}>Link</Link>
+              <Link to={'/'}>Home</Link>
+            </p>
+          </div>
+        </div>
+        <div className='navigation-link '>
+          <div className='main-link inline spread'>
+            <p className='mobile-nav-link'>
+              <Link to={'/categories'}>Categories</Link>
             </p>
           </div>
         </div>
