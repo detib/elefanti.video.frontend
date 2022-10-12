@@ -1,59 +1,75 @@
-.formFields {
+.login-form {
   position: relative;
   display: flex;
   justify-content: center;
   width: 100%;
-}
-.logoContainer {
-  display: flex;
-  justify-content: center;
-  .logo {
-    width: 60%;
-  }
-}
-.loginTitle {
-  font-size: 2.1rem;
-  font-weight: 500;
-  line-height: 1.5;
-  color: #212529;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-}
-.formInput {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  input:focus {
-    outline-color: #4692dd;
-  }
-  button:focus {
-    opacity: 0.7;
-  }
-  input {
-    padding: 12px 20px;
-    border: 1px solid #ced4da;
-    box-sizing: border-box;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    border-radius: 0.3rem;
-  }
-  button {
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    color: #212529;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 0.3rem;
-    background-color: #5784ff;
-    color: beige;
+  padding-top: 150px;
+  .content-wrapper {
+    max-width: 90%;
+    .logoContainer {
+      display: flex;
+      justify-content: center;
+      width: 250px;
+      max-width: 100%;
+      svg {
+        width: 100%;
+        path {
+          transition: 0.3s;
+        }
+      }
+      &:hover {
+        svg {
+          .st0 {
+            fill: var(--darker-main-color);
+          }
+        }
+      }
+    }
+    .input-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      .loginTitle {
+        font-size: 2.1rem;
+        font-weight: 500;
+        line-height: 1.5;
+        color: #212529;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+      }
+      input:focus {
+        outline-color: #4692dd;
+      }
+      button:focus {
+        opacity: 0.7;
+      }
+      input {
+        padding: 12px 20px;
+        border: 1px solid #ced4da;
+        box-sizing: border-box;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        border-radius: 0.3rem;
+      }
+      button {
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        color: #212529;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: 0.3rem;
+        background-color: #5784ff;
+        color: beige;
+      }
+    }
   }
 }

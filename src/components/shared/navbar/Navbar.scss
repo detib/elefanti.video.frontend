@@ -6,15 +6,19 @@
   z-index: 2000;
   transition: 0.1s;
   .navbar-content {
-    padding: 0.75em 2.75em;
+    // padding: 0 2.75em;
+    width: 1400px;
+    max-width: 90%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(#000, 0);
     position: relative;
     transition: 0.3s;
     .title-icon {
+      flex-shrink: 0;
       .nav-icon {
+        width: 50px;
         svg {
           path {
             fill: var(--main-color);
@@ -24,21 +28,22 @@
       .nav-title {
         h1 {
           font-size: 21px;
-          color: var(--dark-text);
+          color: #fff;
         }
       }
     }
     .navigation {
       display: flex;
       justify-content: space-between;
+      margin-right: auto;
       .nav-link-container {
         cursor: pointer;
-        padding: 20px 30px;
+        padding: 22.5px 30px;
         margin: auto 0;
         align-self: stretch;
         .nav-link {
           font-size: 16px;
-          color: var(--dark-text);
+          color: #fff;
           transition: 0.2s;
           svg {
             transition: 0.2s;
@@ -48,9 +53,6 @@
         &:hover {
           .nav-link {
             color: var(--main-color) !important;
-            svg {
-              transform: rotate(-180deg);
-            }
           }
         }
       }
@@ -65,10 +67,10 @@
           padding: 0.5em 1.5em;
           border-radius: 100vh;
           font-size: 16px;
-          color: var(--dark-text);
+          color: #fff;
         }
         .signup {
-          color: #fff;
+          color: #fff !important;
           background-color: var(--main-color);
         }
       }
@@ -109,78 +111,56 @@
   }
 }
 
-.home-page {
-  .navbar {
-    .navbar-content {
-      .title-icon {
-        .nav-icon {
-          svg path {
-            fill: #fff;
-          }
-        }
-        .nav-title {
-          h1 {
-            color: #fff;
-          }
-        }
-      }
-      .navigation {
-        .nav-link-container {
-          .nav-link {
-            color: #fff;
-          }
+.sticky {
+  background-color: #fff;
+  box-shadow: 0 0 3px 1px var(--50-main-color);
+}
+
+.sticky-nav-colors {
+  color: var(--dark-text) !important;
+}
+
+.register,
+.login {
+  .navbar-content {
+    .title-icon {
+      .nav-title {
+        h1 {
+          color: var(--dark-text);
         }
       }
-      .nav-login-signup {
-        .search-box {
-          label {
-            svg {
-              color: #fff;
-            }
-          }
+    }
+    .navigation {
+      .nav-link-container {
+        .nav-link {
+          color: var(--dark-text);
         }
-        .login-link-container {
-          .login-link {
-            color: #fff;
-          }
+      }
+    }
+    .nav-login-signup {
+      .login-link-container {
+        .login-link {
+          color: var(--dark-text);
         }
       }
     }
   }
 }
 
-.sticky {
-  background-color: var(--darker-bg) !important;
-  box-shadow: 0 0 3px 1px var(--50-main-color);
-}
-
-.sticky-nav-colors {
-  color: var(--dark-text) !important;
-  .page-logo-path {
-    fill: var(--main-color) !important;
-  }
-}
-
-@media (max-width: 1300px) {
-  .nav-link-container {
-    padding: 20px !important;
-  }
-}
+// @media (max-width: 1300px) {
+//   .nav-link-container {
+//     padding: 20px !important;
+//   }
+// }
 
 @media (max-width: 1100px) {
   .navbar {
     .navbar-content {
-      padding: 0.75em 1.5em;
       .title-icon {
         .nav-icon {
           width: 30px;
           svg {
             width: 100%;
-          }
-        }
-        .nav-title {
-          h1 {
-            font-size: 14px;
           }
         }
       }
@@ -191,6 +171,7 @@
 @media (max-width: 1000px) {
   .navbar {
     .navbar-content {
+      padding: 0.5em 0;
       .title-icon {
         .nav-title {
           h1 {
@@ -215,10 +196,10 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .navbar {
     .navbar-content {
-      padding: 1.5em;
+      max-width: 95%;
     }
   }
 }

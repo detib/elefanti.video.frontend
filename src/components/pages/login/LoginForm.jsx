@@ -1,6 +1,6 @@
 import React from 'react';
 import './LoginForm.scss';
-import logo from '../../../assets/shared/logo.png';
+import { ReactComponent as Logo } from '../../../assets/shared/logo.svg'
 import { useRef } from 'react';
 import axios from 'axios';
 
@@ -82,12 +82,12 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleLogin} autoComplete='off' className='formFields'>
-      <div className='formField'>
+    <form onSubmit={handleLogin} autoComplete='off' className='login-form'>
+      <div className='content-wrapper'>
         <div className='logoContainer'>
-          <img src={logo} className='logo' />
+          <Logo />
         </div>
-        <div className='formInput'>
+        <div className='input-wrapper'>
           <h1 className='loginTitle'>Log in</h1>
           <input ref={usernameRef} type='text' placeholder='Enter your username' />
           <input ref={passwordRef} type='password' placeholder='Enter your Password..' />

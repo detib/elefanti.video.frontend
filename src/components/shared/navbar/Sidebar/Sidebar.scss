@@ -20,6 +20,7 @@
     border-bottom: 1px solid var(--main-color);
     .sidebar-icon-title {
       .sidebar-icon {
+        width: 50px;
         svg {
           path {
             fill: var(--main-color);
@@ -129,6 +130,8 @@
 
 @media (max-width: 400px) {
   .side-bar {
+    max-width: unset;
+    width: 100%;
     .sidebar-logo {
       .sidebar-icon-title {
         .sidebar-title {
@@ -138,7 +141,8 @@
     }
     .sidebar-auth {
       .auth-navigations {
-        flex-direction: column;
+        flex-wrap: wrap;
+        // flex-direction: column;
         gap: 25px;
         .login-link-container {
           align-self: center;

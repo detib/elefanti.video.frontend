@@ -1,8 +1,8 @@
 import { useState, useEffect, useContext } from 'react';
 import './Navbar.scss';
 
-import { Link, useNavigate } from 'react-router-dom';
-import Logo from '../../../assets/shared/logo.png';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { ReactComponent as Logo } from '../../../assets/shared/logo-no-text.svg';
 import Sidebar from './Sidebar/Sidebar';
 import Backdrop from '../Backdrop/Backdrop';
 import Searchbar from './Searchbar';
@@ -13,7 +13,7 @@ const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const context = useContext(AuthContext);
-  
+  const location = useLocation();
   const navigate = useNavigate()
 
   const showSidebar = () => {
@@ -43,18 +43,18 @@ const Navbar = () => {
   const zIndex = 100;
 
   return (
-    <div className='navbar'>
-      <div className={`navbar-content ${isSticky ? 'sticky' : ''}`}>
-        <div className='title-icon inline'>
+    <div className={`navbar ${isSticky ? 'sticky' : ''} ${location.pathname.replace('/', '')}`}>
+      <div className={`navbar-content `}>
+        <Link to='/' className='title-icon inline'>
           <div className='nav-icon'>
-            {/* <Logo className={isSticky ? 'sticky-nav-colors' : ''} /> */}
+            <Logo className={isSticky ? 'sticky-nav-colors' : ''} />
           </div>
           <div className='nav-title'>
-            <Link to='/'>
+            <div>
               <h1 className={isSticky ? 'sticky-nav-colors' : ''}>Elefanti Video</h1>
-            </Link>
+            </div>
           </div>
-        </div>
+        </Link>
         <div className='navigation'>
           <div className='nav-link-container'>
             <Link to='/' className={`nav-link ${isSticky ? 'sticky-nav-colors' : ''} `}>
