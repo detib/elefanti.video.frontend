@@ -43,7 +43,7 @@ const Navbar = () => {
   const zIndex = 100;
 
   return (
-    <div className={`navbar ${isSticky ? 'sticky' : ''} ${location.pathname.replace('/', '')}`}>
+    <div className={`navbar ${isSticky ? 'sticky' : ''} ${location.pathname.split('/')[1]}`}>
       <div className={`navbar-content `}>
         <Link to='/' className='title-icon inline'>
           <div className='nav-icon'>

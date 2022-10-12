@@ -29,7 +29,7 @@ const MainCategories = () => {
       <div className='main-categories__categories'>
         {categories.map((category) => {
           return (
-            <Link key={category.Id} to={`/categories/${category.Name}`} className='single-category'>
+            <Link key={category.Id} to={`/categories/${category.Id}`} className='single-category'>
               <img src='https://source.unsplash.com/random/550x400' alt='' />
               <div className='single-category__name'>
                 <p>{category.Name}</p>

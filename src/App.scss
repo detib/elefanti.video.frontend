@@ -34,6 +34,13 @@ body {
   text-decoration: none;
 }
 
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 body {
   // background-color: black;
   --main-color: #5784ff;

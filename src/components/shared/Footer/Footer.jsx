@@ -8,7 +8,7 @@ const Footer = () => {
 
 
     return (
-      <div className='footer'>
+      <footer className='footer'>
          <div className='footer-header spread'>
             <Link to='/' className='logo-title inline'>  
               <h1>Elefanti Video</h1>
@@ -20,7 +20,7 @@ const Footer = () => {
              <p>©ElefantiVideo 2022 | All Rights Reserved.</p>
             </div>
           </div>
-      </div>
+      </footer>
        
     );
   };
