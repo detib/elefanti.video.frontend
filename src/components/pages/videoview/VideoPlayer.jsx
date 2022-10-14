@@ -1,31 +1,26 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import './VideoPlayer.scss';
+import './styles/VideoPlayer.scss';
+import Youtube from 'react-youtube';
+import SuggestedVideos from './SuggestedVideos';
+import { useParams } from 'react-router-dom';
+import CommentSection from './CommentSection';
 
-const YoutubeEmbed = ({ embedId }) => (
-  <div className='content'>
-    <div className='video-responsive'>
-      <iframe
-        width='330'
-        height='220'
-        src={`https://www.youtube.com/embed/${embedId}`}
-        frameBorder='0'
-        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-        allowFullScreen
-        title='Embedded youtube'
-      />
-      <h2>This is Title</h2>
-      <h3>This part is going to include description</h3>
+const VideoPlayer = () => {
+  const { videoId } = useParams();
+
+  return (
+    <div className='content'>
+      <div className='video-player-comments'>
+        <Youtube className='youtube-player' videoId={videoId} />
+        <div className='comment-section'>
+          <CommentSection videoId={videoId}/>
+        </div>
+      </div>
+      <div className='suggestedVideos'>
+        <SuggestedVideos videoId={videoId} />
+      </div>
     </div>
-
-    <div className='similar-list'>
-      <h3>This is for similar posts</h3>
-    </div>
-  </div>
-);
-
-YoutubeEmbed.propTypes = {
-  embedId: PropTypes.string.isRequired,
+  );
 };
 
-export default YoutubeEmbed;
+export default VideoPlayer;

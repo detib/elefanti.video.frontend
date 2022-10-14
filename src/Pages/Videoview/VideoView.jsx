@@ -1,11 +1,13 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 import VideoPlayer from '../../components/pages/videoview/VideoPlayer'
+import UserLayout from '../../components/shared/layouts/UserLayout'
 
 const VideoView = () => {
   return (
-    <>
-        <VideoPlayer />
-    </>
+    <UserLayout className='watch'>
+      <VideoPlayer />
+    </UserLayout>
   )
 }
 
