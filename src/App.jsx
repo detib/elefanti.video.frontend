@@ -11,13 +11,13 @@ import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
 import Login from './Pages/auth/login/Login';
 import Register from './Pages/auth/register/Register';
+import Categories from './Pages/Categories/Categories';
 import SingleCategory from './Pages/SingleCategory/SingleCategory';
 import Search from './Pages/Search/Search';
 import Error404 from './Pages/Error404/Error404';
 
 import { AuthContext } from './context/AuthContext';
 import jwtDecode from 'jwt-decode';
-import Categories from './Pages/Categories/Categories';
 
 const App = () => {
   const context = useContext(AuthContext);
@@ -63,7 +63,7 @@ const App = () => {
         <Route path='/categories' element={<Categories />} />
         <Route path='/categories/:categoryId' element={<SingleCategory />} />
         <Route path='/search/:query' element={<Search />} />
-        <Route path='/watch' element={<VideoView />} />
+        <Route path='/watch/:videoId' element={<VideoView />} />
         <Route path='*' element={<Error404 />} />
         {context.data.isLoggedIn ? (
           <>
