@@ -44,7 +44,7 @@ const LoginForm = () => {
       })
       .then((response) => {
         const token = response.data.token;
-        localStorage.setItem('auth-token', JSON.stringify(token));
+        localStorage.setItem('auth-token', token);
         // handle state change
         context.setData({
           token: token,
