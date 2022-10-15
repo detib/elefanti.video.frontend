@@ -53,9 +53,8 @@ const SuggestedVideos = ({ videoId }) => {
               id: video.id,
               to: `/watch/${video.id}`,
               title: video.title,
-              //   createdOn: video.createdOn,
-              //   description: video.description,
-              //   timestamp: video.timeStamp,
+              createdOn: video.createdOn,
+              description: video.description,
             };
             return <VideoCard {...videoProps} />;
           }

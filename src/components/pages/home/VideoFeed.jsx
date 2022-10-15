@@ -38,7 +38,6 @@ const VideoFeed = () => {
             title: video.title,
             createdOn: video.createdOn,
             description: video.description,
-            timestamp: video.timeStamp,
           };
           return <VideoCard {...videoProps} />;
         })}

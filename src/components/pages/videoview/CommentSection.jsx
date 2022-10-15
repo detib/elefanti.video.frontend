@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext, useRef } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../../context/AuthContext';
-import { formatDistanceToNow } from 'date-fns';
+import { formatDistance } from 'date-fns';
 
 import './styles/CommentSection.scss';
 import '../../shared/styles/shared.scss';
@@ -17,10 +17,9 @@ const CommentSection = ({ videoId }) => {
       .get(`${process.env.REACT_APP_API}/api/reactions/comments/video/${videoId}`)
       .then((response) => {
         response.data = response.data.sort((a, b) => new Date(b.CreatedOn) - new Date(a.CreatedOn));
-        console.log(response.data);
         response.data.forEach((comment) => {
-          const dateCreated = new Date(comment.CreatedOn).toLocaleDateString();
-          comment.CreatedOn = formatDistanceToNow(new Date(dateCreated));
+          const dateCreated = new Date(comment.CreatedOn);
+          comment.CreatedOn = formatDistance(dateCreated, new Date());
         });
         setComments((prev) => (prev = response.data));
       })
@@ -62,8 +61,8 @@ const CommentSection = ({ videoId }) => {
           autoClose: 2000,
           isLoading: false,
         });
-        const dateCreated = new Date(response.data.CreatedOn).toLocaleDateString();
-        response.data.CreatedOn = formatDistanceToNow(new Date(dateCreated));
+        const dateCreated = new Date(response.data.CreatedOn);
+        response.data.CreatedOn = formatDistance(dateCreated, new Date());
         setComments((prev) => (prev = [response.data, ...prev]));
       })
       .catch((error) => {
@@ -80,7 +79,6 @@ const CommentSection = ({ videoId }) => {
   };
 
   useEffect(() => {
-    console.log(context.data.token);
     fetchComments();
     // cancel axios request
   }, [videoId]);
@@ -88,11 +86,15 @@ const CommentSection = ({ videoId }) => {
   return (
     <div className='comment-wrapper flex-col'>
       {context.data.isLoggedIn && (
-        <div className='comment-form'>
-          <form onSubmit={addComment} className='flex-col'>
-            <input ref={commentInputRef} type='text' placeholder='Add your comment' />
-          </form>
-        </div>
+        <>
+          <h3 className='comment-header'>Write a Comment</h3>
+          <div className='shareCommentContainer'>
+            <textarea ref={commentInputRef} placeholder='Write a comment..'></textarea>
+            <button onClick={addComment} className='add-comment-button'>
+              Add Comment
+            </button>
+          </div>
+        </>
       )}
       <h3 className='comment-header'>Comment Section</h3>
       <div className='comments flex-col'>
