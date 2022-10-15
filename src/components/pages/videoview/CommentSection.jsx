@@ -17,7 +17,6 @@ const CommentSection = ({ videoId }) => {
       .get(`${process.env.REACT_APP_API}/api/reactions/comments/video/${videoId}`)
       .then((response) => {
         response.data = response.data.sort((a, b) => new Date(b.CreatedOn) - new Date(a.CreatedOn));
-        console.log(response.data);
         response.data.forEach((comment) => {
           const dateCreated = new Date(comment.CreatedOn);
           comment.CreatedOn = formatDistance(dateCreated, new Date());
@@ -62,7 +61,6 @@ const CommentSection = ({ videoId }) => {
           autoClose: 2000,
           isLoading: false,
         });
-        console.log(response.data.CreatedOn);
         const dateCreated = new Date(response.data.CreatedOn);
         response.data.CreatedOn = formatDistance(dateCreated, new Date());
         setComments((prev) => (prev = [response.data, ...prev]));
