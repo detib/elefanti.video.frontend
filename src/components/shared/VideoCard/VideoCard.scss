@@ -41,8 +41,7 @@ $baseClr: #dff6ff;
     font-size: 16px;
     margin-top: 10px;
     align-self: flex-end;
-    color: #979797;
-    // color: var(--main-color);
+    color: var(--grey-text);
   }
 
   &__image {
