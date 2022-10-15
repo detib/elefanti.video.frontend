@@ -1,10 +1,16 @@
-import React from 'react';
-import './styles/LikeButton.scss'
+import React, { useRef, useLayoutEffect } from 'react';
+import './styles/LikeButton.scss';
 
-const LikeButton = ({ onClick }) => {
+const LikeButton = ({ onClick, checked }) => {
+  const checkboxRef = useRef();
+
+  useLayoutEffect(() => {
+    checkboxRef.current.checked = checked;
+  }, [checked]);
+
   return (
-    <label onClick={onClick} className='like'>
-      <input type='checkbox' />
+    <label className='like'>
+      <input ref={checkboxRef} onClick={onClick} type='checkbox' />
       <div className='heart' />
     </label>
   );
