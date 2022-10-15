@@ -62,9 +62,6 @@ const HomeBanner = () => {
               ></div>
               <div className='slide__content'>
                 <h2 className='slide__title'>{video.title}</h2>
-                <p className='slide__description'>
-                  {video.description}
-                </p>
                 <div className='click-button'>Click to Watch</div>
               </div>
             </Link>
