@@ -38,8 +38,6 @@ const CommentSection = ({ videoId }) => {
       return;
     }
 
-    if (toast.isActive('addComment')) return;
-
     const toastId = toast.loading('Adding comment...', { toastId: 'addComment', autoClose: 2000 });
     await axios
       .post(
