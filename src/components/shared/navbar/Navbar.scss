@@ -64,7 +64,8 @@
       gap: 15px;
       .login-link-container {
         .login-link {
-          padding: 0.5em 1.5em;
+          display: block;
+          padding: 0.65em 1.5em;
           border-radius: 100vh;
           font-size: 16px;
           color: #fff;
@@ -126,7 +127,8 @@
 .search,
 .error,
 .watch,
-.single-category {
+.single-category,
+.user {
   .navbar-content {
     .title-icon {
       .nav-title {

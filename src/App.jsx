@@ -15,6 +15,7 @@ import Categories from './Pages/Categories/Categories';
 import SingleCategory from './Pages/SingleCategory/SingleCategory';
 import Search from './Pages/Search/Search';
 import Error404 from './Pages/Error404/Error404';
+import User from './Pages/User/User';
 
 import { AuthContext } from './context/AuthContext';
 import jwtDecode from 'jwt-decode';
@@ -72,7 +73,7 @@ const App = () => {
             ] === 'admin' ? (
               <Route path='/admin' element={<div>Admin</div>} />
             ) : null}
-            <Route path='/user' element={<div>User</div>} />
+            <Route path='/user' element={<User />} />
           </>
         ) : null}
         ;
