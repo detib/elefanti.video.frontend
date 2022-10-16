@@ -5,7 +5,6 @@ import './App.scss';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 
-
 import VideoView from './Pages/Videoview/VideoView';
 import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
@@ -19,6 +18,7 @@ import User from './Pages/User/User';
 
 import { AuthContext } from './context/AuthContext';
 import jwtDecode from 'jwt-decode';
+import ScrollToTop from './utils/ScrollToTop';
 
 const App = () => {
   const context = useContext(AuthContext);
@@ -49,42 +49,35 @@ const App = () => {
     }
   };
 
-
   useEffect(() => {
     checkToken();
   }, []);
 
   return (
     <Router>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/categories' element={<Categories />} />
-        <Route path='/categories/:categoryId' element={<SingleCategory />} />
-        <Route path='/search/:query' element={<Search />} />
-        <Route path='/watch/:videoId' element={<VideoView />} />
-        <Route path='*' element={<Error404 />} />
-        {context.data.isLoggedIn ? (
-          <>
-            {jwtDecode(context.data.token)[
-              'http://schemas.microsoft.com/ws/2008/06/identity/claims/role'
-            ] === 'admin' ? (
-              <Route path='/admin' element={<div>Admin</div>} />
-            ) : null}
-            <Route path='/user' element={<User />} />
-          </>
-        ) : null}
-        ;
-      </Routes>
-      <ToastContainer
-        closeOnClick={true}
-        theme='colored'
-        autoClose={2000}
-        pauseOnHover={false}
-        pauseOnFocusLoss={false}
-      />
+      <ScrollToTop>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/categories' element={<Categories />} />
+          <Route path='/categories/:categoryId' element={<SingleCategory />} />
+          <Route path='/search/:query' element={<Search />} />
+          <Route path='/watch/:videoId' element={<VideoView />} />
+          <Route path='*' element={<Error404 />} />
+          {context.data.isLoggedIn ? (
+            <>
+              {jwtDecode(context.data.token)['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'] === 'admin' ? (
+                <Route path='/admin' element={<div>Admin</div>} />
+              ) : null}
+              <Route path='/user' element={<User />} />
+            </>
+          ) : null}
+          ;
+        </Routes>
+      </ScrollToTop>
+      <ToastContainer closeOnClick={true} theme='colored' autoClose={2000} pauseOnHover={false} pauseOnFocusLoss={false} />
     </Router>
   );
 };
