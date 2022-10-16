@@ -9,8 +9,8 @@ const VideoCard = (props) => {
     const date = new Date(props.createdOn);
     VideoDateCreated = formatDistance(date, new Date());
   }
-  let description;
-  if (props.description && props.description.length > 65) {
+  let description = props.description;
+  if (props.description?.length > 65) {
     description = props.description.substring(0, 64) + '...';
   }
   return (
