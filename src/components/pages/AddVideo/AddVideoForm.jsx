@@ -18,6 +18,7 @@ const AddVideoForm = () => {
       </form>
     </div>
   );
+  
 };
 
 export default AddVideoForm;
