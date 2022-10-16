@@ -40,14 +40,13 @@ const VideoPlayer = () => {
       .get(`${process.env.REACT_APP_API}/api/reactions/likes/${videoId}`)
       .then((response) => {
         setVideoLikes(response.data);
-        console.log(response.data);
         if (context.data.isLoggedIn) {
           const likeExists = response.data.find((like) => like.UserId == jwtDecode(context.data.token).Id);
           setExistingLike(likeExists != undefined ? true : false);
         }
       })
-      .catch(() => {
-        console.log('Error on fetch');
+      .catch((error) => {
+        console.log(error);
         toast.error('Something went wrong when fetching likes');
       });
   };
