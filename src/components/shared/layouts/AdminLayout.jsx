@@ -5,13 +5,9 @@ import './AdminLayout.scss';
 
 const AdminLayout = ({ children, className }) => {
   return (
-    <div className={`main ${className}`}>
-      <AdminNavbar  />
-      <div className='content'>
-        <main>{children}</main>
-        </div>
-      
-      
+    <div className={`admin-main ${className}`}>
+      <AdminNavbar />
+      <main className='admin-layout-content'>{children}</main>
     </div>
   );
 };
