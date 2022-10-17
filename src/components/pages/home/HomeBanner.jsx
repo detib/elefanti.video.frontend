@@ -22,12 +22,12 @@ const HomeBanner = () => {
   const changeSlide = () => {
     let slideIndex = 0;
     interval = setInterval(() => {
-      if (slideIndex == bannerVideos.length - 1) {
+      if (slideIndex >= 100 - (100 / bannerVideos.length)) {
         slideIndex = 0;
       } else {
-        slideIndex++;
+        slideIndex += 100 / bannerVideos.length;
       }
-      sliderContainer.current.style.setProperty('--translateX', `-${slideIndex}0%`);
+      sliderContainer.current.style.setProperty('--translateX', `-${slideIndex}%`);
     }, 3500);
   };
 

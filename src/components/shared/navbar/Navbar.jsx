@@ -3,6 +3,7 @@ import './Navbar.scss';
 
 import { Link, useNavigate } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../../assets/shared/logo-no-text.svg';
+import { AiOutlineUser } from 'react-icons/ai';
 import Sidebar from './Sidebar/Sidebar';
 import Backdrop from '../Backdrop/Backdrop';
 import Searchbar from './Searchbar';
@@ -13,20 +14,11 @@ const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const context = useContext(AuthContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const showSidebar = () => {
     setSidebar(!sidebar);
   };
-
-  const logout = () => {
-    localStorage.removeItem('auth-token');
-    context.setData({
-      token: null,
-      isLoggedIn: false,
-    });
-    navigate('/');
-  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,20 +57,14 @@ const Navbar = () => {
           <Searchbar />
           {context.data.isLoggedIn ? (
             <div className='login-link-container'>
-              <div
-                onClick={logout}
-                className={`login-link signup ${isSticky ? 'sticky-nav-colors' : ''}`}
-              >
-                Log Out
-              </div>
+              <Link to='/user' className={`login-link signup ${isSticky ? 'sticky-nav-colors' : ''}`}>
+                <AiOutlineUser />
+              </Link>
             </div>
           ) : (
             <>
               <div className='login-link-container'>
-                <Link
-                  to='/login'
-                  className={`login-link login ${isSticky ? 'sticky-nav-colors' : ''}`}
-                >
+                <Link to='/login' className={`login-link login ${isSticky ? 'sticky-nav-colors' : ''}`}>
                   Log in
                 </Link>
               </div>

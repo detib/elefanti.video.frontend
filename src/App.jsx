@@ -5,7 +5,6 @@ import './App.scss';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 
-
 import VideoView from './Pages/Videoview/VideoView';
 import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
@@ -16,9 +15,11 @@ import SingleCategory from './Pages/SingleCategory/SingleCategory';
 import Search from './Pages/Search/Search';
 import AdminVideoPage from './Pages/AdminVideo/AdminVideoPage';
 import Error404 from './Pages/Error404/Error404';
+import User from './Pages/User/User';
 
 import { AuthContext } from './context/AuthContext';
 import jwtDecode from 'jwt-decode';
+import ScrollToTop from './utils/ScrollToTop';
 
 const App = () => {
   const context = useContext(AuthContext);
@@ -49,7 +50,6 @@ const App = () => {
     }
   };
 
-
   useEffect(() => {
     checkToken();
   }, []);
@@ -68,23 +68,15 @@ const App = () => {
         <Route path='*' element={<Error404 />} />
         {context.data.isLoggedIn ? (
           <>
-            {jwtDecode(context.data.token)[
-              'http://schemas.microsoft.com/ws/2008/06/identity/claims/role'
-            ] === 'admin' ? (
+            {jwtDecode(context.data.token)['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'] === 'admin' ? (
               <Route path='/admin' element={<AdminVideoPage />} />
             ) : null}
-            <Route path='/user' element={<div>User</div>} />
+            <Route path='/user' element={<User />} />
           </>
         ) : null}
         ;
       </Routes>
-      <ToastContainer
-        closeOnClick={true}
-        theme='colored'
-        autoClose={2000}
-        pauseOnHover={false}
-        pauseOnFocusLoss={false}
-      />
+      <ToastContainer closeOnClick={true} theme='colored' autoClose={2000} pauseOnHover={false} pauseOnFocusLoss={false} />
     </Router>
   );
 };

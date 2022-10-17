@@ -1,0 +1,28 @@
+.noselect {
+  padding: 1em 1.5em;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  background: currentColor;
+
+  .text {
+    color: white;
+    font-weight: bold;
+  }
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      font-size: 15px;
+      path {
+        fill: #eee;
+      }
+    }
+  }
+}
