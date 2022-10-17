@@ -6,25 +6,12 @@ import { toast } from 'react-toastify';
 import { useEffect } from 'react';
 import VideoCard from '../../shared/VideoCard/VideoCard';
 
-const SuggestedVideos = ({ videoId }) => {
+const SuggestedVideos = ({ video }) => {
   const [suggestedVideos, setSuggestedVideos] = useState([]);
-  const [category, setCategory] = useState({});
-
-  const fetchCategory = async () => {
-    await axios
-      .get(`${process.env.REACT_APP_API}/api/videos/${videoId}`)
-      .then((response) => {
-        setCategory((prev) => (prev = response.data.category));
-      })
-      .catch((error) => {
-        console.log(error);
-        toast.error('Something went wrong when fetching suggestions');
-      });
-  };
 
   const fetchSuggestedVideos = async () => {
     await axios
-      .get(`${process.env.REACT_APP_API}/api/videos/category/${category.id}`)
+      .get(`${process.env.REACT_APP_API}/api/videos/category/${video.categoryId}`)
       .then((response) => {
         setSuggestedVideos((prev) => (prev = response.data));
       })
@@ -34,20 +21,16 @@ const SuggestedVideos = ({ videoId }) => {
   };
 
   useEffect(() => {
-    fetchCategory();
-  }, []);
-
-  useEffect(() => {
-    if (category.id) {
+    if (video.id) {
       fetchSuggestedVideos();
     }
-  }, [category]);
+  }, [video]);
 
   return (
     <div className='suggested-videos'>
       <div className='suggested-videos-wrapper'>
         {suggestedVideos.map((video) => {
-          if (video.id != videoId) {
+          if (video.id != video.Id) {
             const videoProps = {
               key: video.id,
               id: video.id,
