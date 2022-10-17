@@ -16,6 +16,7 @@ import Search from './Pages/Search/Search';
 import AdminVideoPage from './Pages/AdminVideo/AdminVideoPage';
 import Error404 from './Pages/Error404/Error404';
 import User from './Pages/User/User';
+import AdminCategory from './Pages/AdminCategories/AdminCategory';
 
 import { AuthContext } from './context/AuthContext';
 import jwtDecode from 'jwt-decode';
@@ -56,26 +57,31 @@ const App = () => {
 
   return (
     <Router>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/categories' element={<Categories />} />
-        <Route path='/categories/:categoryId' element={<SingleCategory />} />
-        <Route path='/search/:query' element={<Search />} />
-        <Route path='/watch/:videoId' element={<VideoView />} />
-        <Route path='*' element={<Error404 />} />
-        {context.data.isLoggedIn ? (
-          <>
-            {jwtDecode(context.data.token)['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'] === 'admin' ? (
-              <Route path='/admin' element={<AdminVideoPage />} />
-            ) : null}
-            <Route path='/user' element={<User />} />
-          </>
-        ) : null}
-        ;
-      </Routes>
+      <ScrollToTop>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/categories' element={<Categories />} />
+          <Route path='/categories/:categoryId' element={<SingleCategory />} />
+          <Route path='/search/:query' element={<Search />} />
+          <Route path='/watch/:videoId' element={<VideoView />} />
+          <Route path='*' element={<Error404 />} />
+          {context.data.isLoggedIn ? (
+            <>
+              {jwtDecode(context.data.token)['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'] === 'admin' ? (
+                <>
+                  <Route path='/admin/videos' element={<AdminVideoPage />} />
+                  <Route path='/admin/categories' element={<AdminCategory />} />
+                </>
+              ) : null}
+              <Route path='/user' element={<User />} />
+            </>
+          ) : null}
+          ;
+        </Routes>
+      </ScrollToTop>
       <ToastContainer closeOnClick={true} theme='colored' autoClose={2000} pauseOnHover={false} pauseOnFocusLoss={false} />
     </Router>
   );

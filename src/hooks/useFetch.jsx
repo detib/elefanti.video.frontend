@@ -25,7 +25,7 @@ function useFetch(from, take) {
     fetchVideos();
   }, [fetchVideos, from, take]);
 
-  return { loading, error, videos };
+  return { loading, error, videos, setVideos };
 }
 
 export default useFetch;

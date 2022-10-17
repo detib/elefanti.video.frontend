@@ -1,0 +1,84 @@
+.add-category-form {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  form {
+    border: 2px solid #00081e;
+    padding: 0px 60px;
+    border-radius: 10px;
+    border-style: ridge;
+    .content-wrapper {
+      width: 100%;
+      .input-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        h1 {
+          font-size: 1.9rem;
+          font-weight: 500;
+          line-height: 1.5;
+          color: #212529;
+          margin-bottom: 20px;
+          margin-top: 50px;
+          display: flex;
+          justify-content: center;
+        }
+        input:focus {
+          outline-color: #4692dd;
+        }
+        .input {
+          padding: 12px 20px;
+          border: 1px solid #ced4da;
+          box-sizing: border-box;
+          font-size: 1rem;
+          font-weight: 400;
+          line-height: 1.5;
+          color: #495057;
+          border-radius: 0.3rem;
+        }
+        label {
+          cursor: pointer;
+          background-color: var(--main-color);
+          padding: 14px 20px;
+          margin: 8px 0;
+          color: beige;
+          display: flex;
+          justify-content: center;
+          padding: 0.5rem 1rem;
+          font-size: 1rem;
+          line-height: 1.5;
+          border-radius: 0.3rem;
+          gap: 2px;
+          .icon {
+            position: relative;
+            font-size: 24px;
+            line-height: 32px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            color: beige;
+          }
+        }
+      }
+      #inputTag {
+        display: none;
+        align-items: center;
+      }
+      button {
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: 0.3rem;
+        background-color: #5784ff;
+        color: beige;
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
