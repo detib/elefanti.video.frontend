@@ -1,9 +1,11 @@
-.admin-videos {
+.admin-categories {
+  align-self: stretch;
+  width: 100%;
   padding: 1em;
   .form-show {
     display: flex !important;
   }
-  .edit-video-form {
+  .edit-category-form {
     margin: 1em 0;
     display: none;
     gap: 10px;
@@ -31,25 +33,26 @@
       }
     }
   }
-  .videos-wrapper {
-    gap: 15px;
-    .single-video {
+  .categories-wrapper {
+    // gap: 25px;
+    .single-category {
+      padding: 1em 0;
       border-bottom: 1px solid var(--main-color);
-      gap: 15px;
-      .video-details {
-        align-self: stretch;
+      height: 150px;
+      .category-image {
+        height: 100%;
+        // overflow: hidden;
+        img {
+          height: 100%;
+          
+        }
+      }
+      .category-details {
+        align-self: flex-start;
         flex: 1;
-        gap: 5px;
-        justify-content: space-between;
-        .video-title {
+        .category-title {
+          font-weight: 600;
           font-size: 18px;
-          font-weight: 700;
-        }
-        .video-description {
-          flex: 1;
-        }
-        .video-created-date {
-          justify-self: flex-end;
         }
       }
     }

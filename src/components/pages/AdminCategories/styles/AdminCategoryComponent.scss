@@ -1,0 +1,47 @@
+.admin-category {
+  height: 100%;
+  flex: 1;
+  .react-tabs {
+    height: 100%;
+    &__tab-panel {
+      height: calc(100% - 70px);
+      &--selected {
+        display: flex;
+        align-items: center;
+      }
+    }
+    &__tab-list {
+      max-width: 100%;
+      border: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    &__tab {
+      padding: 0.75em 0;
+      flex: 1;
+      text-align: center;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      p {
+        padding-bottom: 15px;
+      }
+      &:focus {
+        box-shadow: unset;
+        &::after {
+          all: unset;
+        }
+      }
+      &--selected {
+        &:focus {
+          border-bottom: 2px solid var(--main-color) !important;
+        }
+        &:focus-within {
+          border-bottom: 2px solid var(--main-color) !important;
+        }
+        border-bottom: 2px solid var(--main-color) !important;
+      }
+    }
+  }
+}

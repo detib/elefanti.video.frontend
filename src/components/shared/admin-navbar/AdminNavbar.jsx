@@ -1,29 +1,29 @@
 import React, { useState } from 'react';
-import { FaTh, FaBars } from 'react-icons/fa';
+import { FaBars } from 'react-icons/fa';
 import { BsFillPlayCircleFill } from 'react-icons/bs';
-import { BiCategoryAlt } from 'react-icons/bi';
+import { AiFillHome } from 'react-icons/ai';
+import { MdDashboard } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import './AdminNavbar.scss';
 import '../styles/shared.scss';
 
-const AdminNavbar = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const AdminNavbar = ({ children, isOpen, setIsOpen }) => {
   const toggle = () => setIsOpen(!isOpen);
   const menuItem = [
     {
-      path: '',
-      name: 'Dashboard',
-      icon: <FaTh />,
+      path: '/',
+      name: 'Home',
+      icon: <AiFillHome />,
     },
     {
-      path: '/video',
+      path: '/admin/videos',
       name: 'Videos',
       icon: <BsFillPlayCircleFill />,
     },
     {
-      path: '',
+      path: '/admin/categories',
       name: 'Categories',
-      icon: <BiCategoryAlt />,
+      icon: <MdDashboard />,
     },
   ];
 

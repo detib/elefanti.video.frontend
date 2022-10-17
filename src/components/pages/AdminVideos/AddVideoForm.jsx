@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useContext } from 'react';
+import React, { useRef, useState, useContext } from 'react';
 import { AuthContext } from '../../../context/AuthContext';
 import './styles/AddVideoForm.scss';
 import { toast } from 'react-toastify';
@@ -6,25 +6,14 @@ import Select from 'react-select';
 import YouTube from 'react-youtube';
 import axios from 'axios';
 
-const AddVideoForm = () => {
+const AddVideoForm = ({ videoCategories }) => {
   const context = useContext(AuthContext);
-  const [videoCategories, setVideoCategories] = useState([]);
   const [videoLink, setVideoLink] = useState('');
   const [videoId, setVideoId] = useState('');
   const titleInput = useRef();
   const descriptionInput = useRef();
   const [categorySelect, setCategorySelect] = useState();
 
-  const getCategories = async () => {
-    await axios
-      .get(`${process.env.REACT_APP_API}/api/categories`)
-      .then((response) => {
-        setVideoCategories((prev) => (prev = response.data));
-      })
-      .catch((error) => {
-        toast.error('Something went wrong when fetching videos');
-      });
-  };
   const youtubeLinkRegEx = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
 
   const handleLinkInput = (e) => {
@@ -75,14 +64,14 @@ const AddVideoForm = () => {
       })
       .catch((error) => {
         console.log(error);
-        let notification;
+        let notificationText;
         if (error.response.status == 409) {
-          notification = 'Video already exists';
+          notificationText = 'Video already exists';
         } else {
-          notification = 'Something went wrong when adding video';
+          notificationText = 'Something went wrong when adding video';
         }
         toast.update(notification, {
-          render: notification,
+          render: notificationText,
           type: toast.TYPE.ERROR,
           autoClose: 2000,
           isLoading: false,
@@ -93,7 +82,7 @@ const AddVideoForm = () => {
         setVideoId((prev) => (prev = ''));
         titleInput.current.value = '';
         descriptionInput.current.value = '';
-        setCategorySelect('');
+        setCategorySelect({ label: null, value: null });
       });
   };
 
@@ -101,10 +90,6 @@ const AddVideoForm = () => {
   videoCategories.forEach((category) => {
     options.push({ value: category.Id, label: category.Name });
   });
-
-  useEffect(() => {
-    getCategories();
-  }, []);
 
   return (
     <div className='add-video-page'>
@@ -116,7 +101,7 @@ const AddVideoForm = () => {
           <div className='form-input-wrapper'>
             <div className='input-wrapper'>
               <h3 className='add-video-form-header'>Add Video</h3>
-              <input onInput={handleLinkInput} type='text' placeholder='Link' />
+              <input value={videoLink} onInput={handleLinkInput} type='text' placeholder='Link' />
               <input ref={titleInput} type='text' placeholder='Title' />
               <Select
                 onChange={(choice) => setCategorySelect((prev) => (prev = choice))}

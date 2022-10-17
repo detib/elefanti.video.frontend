@@ -1,7 +1,13 @@
 .admin-main {
+  height: 100vh;
   display: flex;
   flex-direction: row;
   .admin-layout-content {
     flex: 1;
+    margin-left: 70px;
+    transition: 0.3s;
+  }
+  .nav-open {
+    margin-left: 300px !important;
   }
 }
