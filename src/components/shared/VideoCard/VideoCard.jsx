@@ -1,23 +1,29 @@
 import './VideoCard.scss';
+import '../styles/shared.scss';
 import { Link } from 'react-router-dom';
+import { formatDistance } from 'date-fns';
 
 const VideoCard = (props) => {
+  let VideoDateCreated;
+  if (props.createdOn) {
+    const date = new Date(props.createdOn);
+    VideoDateCreated = formatDistance(date, new Date());
+  }
+  let description = props.description;
+  if (props.description?.length > 65) {
+    description = props.description.substring(0, 64) + '...';
+  }
   return (
-    <Link>
+    <Link to={props.to}>
       <div className='card'>
-        <div className='card__actionArea'>
+        <div className='card__actionArea flex-col'>
           <div className='card__media'>
-            <img
-              className='card__image'
-              src={`https://img.youtube.com/vi/${props.id}/mqdefault.jpg`}
-              alt='thumbnail'
-            />
+            <img className='card__image' src={`https://img.youtube.com/vi/${props.id}/mqdefault.jpg`} alt='thumbnail' />
           </div>
-          <div className='card__content'>
+          <div className='card__content flex-col'>
             <h2 className='card__title'>{props.title}</h2>
-            <p className='card__description'>{props.description}</p>
-            <p className='card__timestamp'>{props.timestamp}</p>
-            <p className='card__createdOn'>{props.createdOn}</p>
+            {description && <p className='card__description'>{description}</p>}
+            {VideoDateCreated && <p className='card__createdOn'>{VideoDateCreated} ago</p>}
           </div>
         </div>
       </div>

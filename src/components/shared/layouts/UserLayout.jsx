@@ -1,13 +1,14 @@
 import React from 'react';
+import Footer from '../Footer/Footer';
 import Navbar from '../navbar/Navbar';
 
-const UserLayout = ({ children }) => {
+const UserLayout = ({ children, className }) => {
   return (
-    <>
+    <div className={`main ${className}`}>
       <Navbar />
-      <div style={{ paddingTop: '100px'}}/>
-      {children}
-    </>
+      <main>{children}</main>
+      <Footer />
+    </div>
   );
 };
 

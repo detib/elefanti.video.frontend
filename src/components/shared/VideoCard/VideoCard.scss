@@ -1,70 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-$primaryClr: #06283D;
-$secondaryClr: #256D85;
-$lightBlue: #47B5FF;
-$baseClr: #DFF6FF;
+$primaryClr: #06283d;
+$secondaryClr: #256d85;
+$lightBlue: #47b5ff;
+$baseClr: #dff6ff;
 
 .card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 20rem;
-  height: 18rem;
-  max-width: 80%;
-  margin: 2rem;
   gap: 2rem;
   justify-content: center;
-  box-shadow: 0 2px 8px $secondaryClr;
+  box-shadow: 0 2px 8px rgb($secondaryClr, 0.1);
   cursor: pointer;
-  border-radius: 0.5rem;
   overflow: hidden;
-
-  &__actionArea{
-    background-color:#06283D;
+  height: 100%;
+  &__actionArea {
+    height: 100%;
   }
 
   &__content {
-    padding: .4rem;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    justify-content: space-between;
-    text-decoration: none;
-  }
-
-  &__content {
+    flex: 1;
     padding: 1rem;
+    justify-content: space-between;
   }
 
   &__title {
-    color: none;
-    color: #DFF6FF;
+    font-size: 20px;
+    color: var(--dark-text);
   }
 
   &__description {
-    color: none;
-    color: #DFF6FF;
+    font-size: 16px;
+    color: var(--dark-text);
   }
 
   &__timestamp {
-    color: none;
-    color: #DFF6FF;
+    color: var(--dark-text);
   }
 
   &__createdOn {
-    color: none !important;
-    color: #DFF6FF;
-  }
-
-  &__media {
-    max-width: 20rem;
-    max-height: 16rem;
+    font-size: 16px;
+    margin-top: 10px;
+    align-self: flex-end;
+    color: var(--grey-text);
   }
 
   &__image {
     object-fit: cover;
     max-width: 100%;
+    width: 100%;
     max-height: 100%;
     display: block;
   }

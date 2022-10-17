@@ -34,9 +34,17 @@ body {
   text-decoration: none;
 }
 
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 body {
   // background-color: black;
   --main-color: #5784ff;
+  --darker-main-color: #3956a7;
   --link-color: #4b7bff;
   --icon-color: #c5d5ff;
   --faded-main-color: #bac8ee;
@@ -52,6 +60,7 @@ body {
   --darker-bg: #fff;
   --black-text: #000;
   --dark-text: #00081e;
+  --grey-text: #979797;
   --dark-input-text: #00081e;
 }
 

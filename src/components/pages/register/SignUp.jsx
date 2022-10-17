@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import './SignUpStyle.scss';
 import '../../shared/styles/shared.scss';
-import logo from '../../../assets/shared/logo.png';
+import { ReactComponent as Logo } from '../../../assets/shared/logo.svg';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -65,13 +65,13 @@ const SignUpForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} autoComplete='off' className='formFields'>
-      <div className='formField'>
+    <form onSubmit={handleSubmit} autoComplete='off' className='signup-form'>
+      <div className='content-wrapper'>
         <div className='logoContainer'>
-          <img src={logo} className='logo' />
+          <Logo />
         </div>
-        <div className='formInput'>
-          <h1 className='loginTitle'>Sign Up</h1>
+        <div className='input-wrapper'>
+          <h1 className='signupTitle'>Sign Up</h1>
           <div className='double-input inline'>
             <input ref={nameRef} type='text' placeholder='Enter your name..' />
             <input ref={surnameRef} type='text' placeholder='Enter your surname..' />

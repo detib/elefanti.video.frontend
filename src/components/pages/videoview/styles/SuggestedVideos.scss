@@ -1,0 +1,27 @@
+.suggested-videos {
+    width: 100%;
+
+    @media (max-width: 1370px) {
+        .suggested-videos {
+            min-width: 100%;
+            align-items: center;
+
+        }
+
+        &-wrapper {
+            max-width: 90%;
+            display: grid !important;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));            
+            gap: 25px;
+            margin: auto;
+            padding-top: 4%;
+        }
+    }
+
+    &-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+}

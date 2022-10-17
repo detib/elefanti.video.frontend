@@ -1,0 +1,32 @@
+.profile-stats {
+  flex: 1;
+  .react-tabs {
+    &__tab-list {
+      border: none;
+      margin: 0 0 25px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    &__tab {
+      padding: 0.75em 0;
+      flex: 1 0 187px;
+      text-align: center;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      &:focus {
+        box-shadow: unset;
+        &::after {
+          all: unset;
+        }
+      }
+      &--selected {
+        &:focus {
+          border-bottom: 2px solid var(--main-color) !important;
+        }
+        border-bottom: 2px solid var(--main-color) !important;
+      }
+    }
+  }
+}

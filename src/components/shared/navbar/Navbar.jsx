@@ -2,7 +2,8 @@ import { useState, useEffect, useContext } from 'react';
 import './Navbar.scss';
 
 import { Link, useNavigate } from 'react-router-dom';
-import Logo from '../../../assets/shared/logo.png';
+import { ReactComponent as Logo } from '../../../assets/shared/logo-no-text.svg';
+import { AiOutlineUser } from 'react-icons/ai';
 import Sidebar from './Sidebar/Sidebar';
 import Backdrop from '../Backdrop/Backdrop';
 import Searchbar from './Searchbar';
@@ -13,21 +14,11 @@ const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const context = useContext(AuthContext);
-  
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const showSidebar = () => {
     setSidebar(!sidebar);
   };
-
-  const logout = () => {
-    localStorage.removeItem('auth-token');
-    context.setData({
-      token: null,
-      isLoggedIn: false,
-    });
-    navigate('/');
-  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,22 +34,22 @@ const Navbar = () => {
   const zIndex = 100;
 
   return (
-    <div className='navbar'>
-      <div className={`navbar-content ${isSticky ? 'sticky' : ''}`}>
-        <div className='title-icon inline'>
+    <div className={`navbar ${isSticky ? 'sticky' : ''} `}>
+      <div className={`navbar-content `}>
+        <Link to='/' className='title-icon inline'>
           <div className='nav-icon'>
-            {/* <Logo className={isSticky ? 'sticky-nav-colors' : ''} /> */}
+            <Logo className={isSticky ? 'sticky-nav-colors' : ''} />
           </div>
           <div className='nav-title'>
-            <Link to='/'>
+            <div>
               <h1 className={isSticky ? 'sticky-nav-colors' : ''}>Elefanti Video</h1>
-            </Link>
+            </div>
           </div>
-        </div>
+        </Link>
         <div className='navigation'>
           <div className='nav-link-container'>
-            <Link to='/' className={`nav-link ${isSticky ? 'sticky-nav-colors' : ''} `}>
-              Link
+            <Link to='/categories' className={`nav-link ${isSticky ? 'sticky-nav-colors' : ''} `}>
+              Categories
             </Link>
           </div>
         </div>
@@ -66,20 +57,14 @@ const Navbar = () => {
           <Searchbar />
           {context.data.isLoggedIn ? (
             <div className='login-link-container'>
-              <div
-                onClick={logout}
-                className={`login-link signup ${isSticky ? 'sticky-nav-colors' : ''}`}
-              >
-                Log Out
-              </div>
+              <Link to='/user' className={`login-link signup ${isSticky ? 'sticky-nav-colors' : ''}`}>
+                <AiOutlineUser />
+              </Link>
             </div>
           ) : (
             <>
               <div className='login-link-container'>
-                <Link
-                  to='/login'
-                  className={`login-link login ${isSticky ? 'sticky-nav-colors' : ''}`}
-                >
+                <Link to='/login' className={`login-link login ${isSticky ? 'sticky-nav-colors' : ''}`}>
                   Log in
                 </Link>
               </div>
