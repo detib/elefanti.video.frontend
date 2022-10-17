@@ -12,7 +12,6 @@ function useFetch(from, take) {
     await axios
       .get(`${process.env.REACT_APP_API}/api/videos?from=${from}&take=${take}`)
       .then((response) => {
-        console.log(response.data);
         setVideos((prev) => prev = [...prev, ...response.data]);
         setLoading(false);
       })

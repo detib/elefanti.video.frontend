@@ -12,7 +12,6 @@ const AddCategory = () => {
 
   const handleImageUpload = (e) => {
     setImage(e.target.files[0]);
-    console.log(e.target.files[0]);
   };
 
   const handleSumbit = async (e) => {

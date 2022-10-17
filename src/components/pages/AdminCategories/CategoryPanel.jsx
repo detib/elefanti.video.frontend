@@ -87,11 +87,9 @@ const CategoryPanel = () => {
       })
       .then((response) => {
         setCategories((current) => {
-          console.log(current);
           const remaining = current.filter((category) => {
             if (category.Id != categoryId) return category;
           });
-          console.log(remaining);
           return remaining;
         });
         toast.update(notification, {
