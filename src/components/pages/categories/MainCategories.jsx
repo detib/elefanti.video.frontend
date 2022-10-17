@@ -30,7 +30,7 @@ const MainCategories = () => {
         {categories.map((category) => {
           return (
             <Link key={category.Id} to={`/categories/${category.Id}`} className='single-category'>
-              <img src='https://source.unsplash.com/random/550x400' alt='' />
+              <img src={`${process.env.REACT_APP_API}/api/assets/category-images/${category.ImageName}`} alt='' />
               <div className='single-category__name'>
                 <p>{category.Name}</p>
               </div>
