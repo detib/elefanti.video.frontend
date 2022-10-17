@@ -6,6 +6,7 @@ import { formatDistance } from 'date-fns';
 
 import './styles/CommentSection.scss';
 import '../../shared/styles/shared.scss';
+import jwtDecode from 'jwt-decode';
 
 const CommentSection = ({ videoId }) => {
   const [comments, setComments] = useState([]);
@@ -61,6 +62,9 @@ const CommentSection = ({ videoId }) => {
         });
         const dateCreated = new Date(response.data.CreatedOn);
         response.data.CreatedOn = formatDistance(dateCreated, new Date());
+        response.data.User = {
+          Username: jwtDecode(context.data.token).Username,
+        };
         setComments((prev) => (prev = [response.data, ...prev]));
       })
       .catch((error) => {
