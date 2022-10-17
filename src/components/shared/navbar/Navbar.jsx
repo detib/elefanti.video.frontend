@@ -4,11 +4,13 @@ import './Navbar.scss';
 import { Link, useNavigate } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../../assets/shared/logo-no-text.svg';
 import { AiOutlineUser } from 'react-icons/ai';
+import { TbLayoutDashboard } from 'react-icons/tb';
 import Sidebar from './Sidebar/Sidebar';
 import Backdrop from '../Backdrop/Backdrop';
 import Searchbar from './Searchbar';
 
 import { AuthContext } from '../../../context/AuthContext';
+import jwtDecode from 'jwt-decode';
 
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -56,11 +58,20 @@ const Navbar = () => {
         <div className='nav-login-signup'>
           <Searchbar />
           {context.data.isLoggedIn ? (
-            <div className='login-link-container'>
-              <Link to='/user' className={`login-link signup ${isSticky ? 'sticky-nav-colors' : ''}`}>
-                <AiOutlineUser />
-              </Link>
-            </div>
+            <>
+              <div className='login-link-container'>
+                <Link to='/user' className={`login-link signup ${isSticky ? 'sticky-nav-colors' : ''}`}>
+                  <AiOutlineUser />
+                </Link>
+              </div>
+              {jwtDecode(context.data.token)['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'] === 'admin' ? (
+                <div className='login-link-container'>
+                  <Link to='/admin/videos' className={`login-link signup ${isSticky ? 'sticky-nav-colors' : ''} center-item`}>
+                    <TbLayoutDashboard />
+                  </Link>
+                </div>
+              ) : null}
+            </>
           ) : (
             <>
               <div className='login-link-container'>

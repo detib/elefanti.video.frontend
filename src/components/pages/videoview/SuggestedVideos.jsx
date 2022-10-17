@@ -29,15 +29,15 @@ const SuggestedVideos = ({ video }) => {
   return (
     <div className='suggested-videos'>
       <div className='suggested-videos-wrapper'>
-        {suggestedVideos.map((video) => {
-          if (video.id != video.Id) {
+        {suggestedVideos.map((currentVideo) => {
+          if (currentVideo.id != video.id) {
             const videoProps = {
-              key: video.id,
-              id: video.id,
-              to: `/watch/${video.id}`,
-              title: video.title,
-              createdOn: video.createdOn,
-              description: video.description,
+              key: currentVideo.id,
+              id: currentVideo.id,
+              to: `/watch/${currentVideo.id}`,
+              title: currentVideo.title,
+              createdOn: currentVideo.createdOn,
+              description: currentVideo.description,
             };
             return <VideoCard {...videoProps} />;
           }
