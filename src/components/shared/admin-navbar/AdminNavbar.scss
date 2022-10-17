@@ -1,65 +1,66 @@
-.container {
-	display: flex;
-}
-main {
-	width: 100%;
-	
-}
-.sidebar {
-	background: rgb(246, 249, 252);
-	color: #fff;
-	height: 100vh;
-	width: 100%;
-	transition: all 0.5s;
-	box-shadow: 0 0 3px 1px var(--50-main-color);
-}
-.top_section {
-	display: flex;
-	align-items: center;
-	padding: 20px 15px;
-}
-.logo {
-	font-size: 20px;
-	color: var(--dark-text);
-}
-.bars {
-	color:var(--main-color);
-	display: flex;
-	font-size: 25px;
-	margin-left: 50px;
-	
-}
-.pages{
-	display: inline;
-}
-.link {
-	display: flex;
-	color:  00091e ;
-	padding: 10px 15px;
-	gap: 15px;
-	transition: all 0.5s;
-	text-decoration: none;
-	margin-right: 5px;
-	margin-left: 5px;
-	&:hover {
-		background: var(--dark-text) ;
-		color: #ffffff;
-		transition: all 0.5s;
-		border-radius: 20px;
-		text-decoration: none;
-		
-	}
-}
-.icon {
-	font-size: 20px;
-	color: var(--main-color);
-	&:hover {
-		
-		color: #ffffff;
-		
-		
-	}
-}
-.link_text {
-	font-size: 20px;
+.admin-nav-container {
+  display: flex;
+  overflow: hidden;
+  .sidebar {
+    background: rgb(246, 249, 252);
+    color: #fff;
+    height: 100vh;
+    width: 60px;
+    transition: all 0.5s;
+    box-shadow: 0 0 3px 1px var(--50-main-color);
+    .top_section {
+      display: flex;
+      align-items: center;
+      padding: 20px 15px;
+      .logo {
+        font-size: 20px;
+        color: var(--dark-text);
+      }
+      .bars {
+        cursor: pointer;
+        color: var(--main-color);
+        display: flex;
+        font-size: 25px;
+      }
+    }
+    .pages {
+      gap: 10px;
+      .link {
+        color: #00091e;
+        padding: 10px 15px;
+        gap: 15px;
+        transition: all 0.5s;
+        margin-right: 5px;
+        margin-left: 5px;
+        .icon {
+          font-size: 20px;
+          color: var(--main-color);
+        }
+        .link_text {
+          display: none;
+          font-size: 20px;
+        }
+        &:hover {
+          background: var(--dark-text);
+          color: #ffffff;
+          transition: all 0.5s;
+          border-radius: 20px;
+          text-decoration: none;
+          .icon {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  .sidebar-open {
+    width: 300px;
+    .pages {
+      .link {
+        .link_text {
+          display: block;
+        }
+      }
+    }
+  }
 }
