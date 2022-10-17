@@ -14,6 +14,7 @@ import Register from './Pages/auth/register/Register';
 import Categories from './Pages/Categories/Categories';
 import SingleCategory from './Pages/SingleCategory/SingleCategory';
 import Search from './Pages/Search/Search';
+import AdminVideoPage from './Pages/AdminVideo/AdminVideoPage';
 import Error404 from './Pages/Error404/Error404';
 
 import { AuthContext } from './context/AuthContext';
@@ -70,7 +71,7 @@ const App = () => {
             {jwtDecode(context.data.token)[
               'http://schemas.microsoft.com/ws/2008/06/identity/claims/role'
             ] === 'admin' ? (
-              <Route path='/admin' element={<div>Admin</div>} />
+              <Route path='/admin' element={<AdminVideoPage />} />
             ) : null}
             <Route path='/user' element={<div>User</div>} />
           </>
