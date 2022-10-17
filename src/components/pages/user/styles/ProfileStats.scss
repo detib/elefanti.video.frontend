@@ -17,6 +17,9 @@
       background-color: transparent;
       &:focus {
         box-shadow: unset;
+        &::after {
+          all: unset;
+        }
       }
       &--selected {
         &:focus {
