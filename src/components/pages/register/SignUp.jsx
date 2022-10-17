@@ -16,7 +16,7 @@ const SignUpForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (passwordRef.current.value <= 8) {
+    if (passwordRef.current.value.length < 8) {
       toast.warn('Password must be at least 8 characters long');
       return;
     } else if (passwordRef.current.value !== passwordConfirmRef.current.value) {

@@ -140,7 +140,7 @@ const VideoPlayer = () => {
         </div>
       </div>
       <div className="suggestedVideos">
-        {video.id && <SuggestedVideos videoId={videoId} />}
+        {video.id && <SuggestedVideos video={video} />}
       </div>
     </div>
   );
